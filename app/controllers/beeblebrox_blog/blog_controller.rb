@@ -1,3 +1,6 @@
+require 'faraday'
+require 'faraday_middleware'
+
 module BeeblebroxBlog
   class BlogController < ApplicationController
     def index
@@ -7,6 +10,7 @@ module BeeblebroxBlog
       end
       
       response = conn.get "/811047914/api/posts.json"
+      @posts = response.body
     end
   end
 end
