@@ -10,4 +10,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   
   s.homepage = "http://rubygems.org/gems/beeblebrox_blog"
+  
+  s.add_runtime_dependency 'faraday'
+  s.add_runtime_dependency 'faraday_middleware'
 end
