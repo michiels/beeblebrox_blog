@@ -1,3 +1,3 @@
 BeeblebroxBlog::Engine.routes.draw do
-  match "/" => "blog#index"
+  match "/" => "beeblebrox_blog/blog#index"
 end
