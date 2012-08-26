@@ -1,1 +1,1 @@
-require 'lib/engine.rb'
+require 'beeblebrox_blog/engine'
