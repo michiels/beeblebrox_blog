@@ -1,4 +1,3 @@
 BeeblebroxBlog::Engine.routes.draw do
-  match "/" => "posts#index"
-  match "/blog" => "posts#index"
+  match "/" => "blog#index"
 end
