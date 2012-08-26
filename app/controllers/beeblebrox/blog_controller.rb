@@ -1,7 +1,7 @@
 require 'faraday'
 require 'faraday_middleware'
 
-module BeeblebroxBlog
+module Beeblebrox
   class BlogController < ApplicationController
     def index
       conn = Faraday.new(:url => 'http://www.beeblebrox.dev') do |faraday|
