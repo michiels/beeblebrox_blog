@@ -1,5 +1,5 @@
-module BeeblebroxBlog
+module Beeblebrox
   class Engine < Rails::Engine
-    isolate_namespace BeeblebroxBlog
+    isolate_namespace Beeblebrox
   end
 end
