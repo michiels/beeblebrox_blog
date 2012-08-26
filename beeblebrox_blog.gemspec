@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.email = 'michiel@firmhouse.com'
   
   s.files = `git ls-files`.split("\n")
-  s.require_paths = ["lib"]
+  s.require_paths = ["lib", "app"]
   
   s.homepage = "http://rubygems.org/gems/beeblebrox_blog"
   

@@ -1,1 +1,1 @@
-require 'beeblebrox_blog/engine'
+require 'beeblebrox/engine'

@@ -1,5 +1,5 @@
 Beeblebrox::Engine.routes.draw do
-  match "/" => "beeblebrox_blog/blog#index"
+  root :to => "blog#index"
   
-  get ":id" => "beeblebrox_blog/blog#show", :as => :post
+  resources :blogs, :path => '', :controller => "blog"
 end

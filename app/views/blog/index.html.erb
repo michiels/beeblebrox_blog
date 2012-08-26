@@ -2,8 +2,9 @@
   <div class="posts">
   <% @posts.each do |post| %>
     <div class="post">
-      
-      <h1><%= link_to post['title'], post_path(post['id'].to_i) %></h1>
+
+      <%= beeblebrox %>
+      <h1><%= link_to post['title'], beeblebrox.blog_path(post['id']) %></h1>
       <div class="published_at">
         <%= l(DateTime.parse(post['published_at']), :format => :short) %>
       </div>
