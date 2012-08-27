@@ -6,11 +6,13 @@ Gem::Specification.new do |s|
   s.authors = ["Michiel Sikkes"]
   s.email = 'michiel@firmhouse.com'
   
-  s.files = `git ls-files`.split("\n")
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.test_files = Dir["test/**/*"]
   s.require_paths = ["lib", "app"]
   
   s.homepage = "http://rubygems.org/gems/beeblebrox_blog"
   
-  s.add_runtime_dependency 'faraday'
-  s.add_runtime_dependency 'faraday_middleware'
+  s.add_dependency "rails", "~> 3.2.8"
+  s.add_dependency 'faraday'
+  s.add_dependency 'faraday_middleware'
 end
