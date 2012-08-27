@@ -1,20 +1,22 @@
-<div class="post">
-  <% if @post %>
-    <h1><%= post['title'] %></h1>
-  <% else %>
-    <h1><%= link_to post['title'], blog_path("#{post['id']}-#{post['slug']}") %></h1>
-  <% end %>
+<% cache cache_key_for_post(post) do %>
+  <div class="post">
+    <% if @post %>
+      <h1><%= post['title'] %></h1>
+    <% else %>
+      <h1><%= link_to post['title'], blog_path("#{post['id']}-#{post['slug']}") %></h1>
+    <% end %>
   
-  <div class="published_at">
-    <%= l(DateTime.parse(post['published_at']), :format => :short) %>
-  </div>
-  <div class="post_meta">
-    <div class="author">
-      <%= image_tag "http://www.gravatar.com/avatar/#{post['author']['email_md5']}.jpg?s=50", :class => "avatar"%>
-      <div class="name"><%= post['author']['full_name'] %></div>
+    <div class="published_at">
+      <%= l(DateTime.parse(post['published_at']), :format => :short) %>
+    </div>
+    <div class="post_meta">
+      <div class="author">
+        <%= image_tag "http://www.gravatar.com/avatar/#{post['author']['email_md5']}.jpg?s=50", :class => "avatar"%>
+        <div class="name"><%= post['author']['full_name'] %></div>
+      </div>
+    </div>
+    <div class="post_body">
+      <%= post['content'].html_safe %>
     </div>
   </div>
-  <div class="post_body">
-    <%= post['content'].html_safe %>
-  </div>
-</div>
+<% end %>
