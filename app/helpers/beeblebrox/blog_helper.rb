@@ -3,7 +3,7 @@ module Beeblebrox
   module BlogHelper
     
     def cache_key_for_post(post)
-      "#{post['id']}-#{post['updated_at'].to_i}"
+      "#{post['id']}-#{DateTime.parse(post['updated_at']).to_i}"
     end
       
   end
