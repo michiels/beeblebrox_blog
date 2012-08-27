@@ -1,6 +1,9 @@
 <div class="post">
-
-  <h1><%= link_to post['title'], blog_path(post['id']) %></h1>
+  <% if @post %>
+    <h1><%= post['title'] %></h1>
+  <% else %>
+    <h1><%= link_to post['title'], blog_path("#{post['id']}-#{post['slug']}") %></h1>
+  <% end %>
   
   <div class="published_at">
     <%= l(DateTime.parse(post['published_at']), :format => :short) %>

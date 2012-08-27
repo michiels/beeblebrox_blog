@@ -11,6 +11,7 @@ module Beeblebrox
     
       response = conn.get "/#{Beeblebrox.site_id}/api/posts.json"
       @posts = response.body
+      
     end
     
     def show
