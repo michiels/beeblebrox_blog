@@ -12,6 +12,10 @@ module Beeblebrox
       response = conn.get "/#{Beeblebrox.site_id}/api/posts.json"
       @posts = response.body
       
+      if request.xhr?
+        render :layout => false
+      end
+      
     end
     
     def show
@@ -22,6 +26,10 @@ module Beeblebrox
       
       response = conn.get "/#{Beeblebrox.site_id}/api/posts/#{params[:id]}.json"
       @post = response.body
+      
+      if request.xhr?
+        render :layout => false
+      end
     end
   end
 end
