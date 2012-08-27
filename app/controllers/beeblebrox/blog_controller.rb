@@ -4,7 +4,7 @@ require 'faraday_middleware'
 module Beeblebrox
   class BlogController < ApplicationController
     def index
-      conn = Faraday.new(:url => 'http://www.beeblebroxapp.com') do |faraday|
+      conn = Faraday.new(:url => Beeblebrox.api_endpoint) do |faraday|
         faraday.response :json, :content_type => /\bjson$/
         faraday.adapter Faraday.default_adapter
       end
@@ -14,7 +14,7 @@ module Beeblebrox
     end
     
     def show
-      conn = Faraday.new(:url => 'http://www.beeblebroxapp.com') do |faraday|
+      conn = Faraday.new(:url => Beeblebrox.api_endpoint) do |faraday|
         faraday.response :json, :content_type => /\bjson$/
         faraday.adapter Faraday.default_adapter
       end
