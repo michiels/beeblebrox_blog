@@ -1,10 +1,6 @@
-<% cache cache_key_for_post(post) do %>
+<% cache ['v2', cache_key_for_post(post)] do %>
   <div class="post">
-    <% if post %>
-      <h1><%= post['title'] %></h1>
-    <% else %>
-      <h1><%= link_to post['title'], blog_path("#{post['id']}-#{post['slug']}") %></h1>
-    <% end %>
+    <h1><%= link_to post['title'], blog_path("#{post['id']}-#{post['slug']}") %></h1>
   
     <div class="published_at">
       <%= l(DateTime.parse(post['published_at']), :format => :short) %>
